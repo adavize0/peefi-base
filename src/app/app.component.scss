@@ -1,0 +1,70 @@
+@use '~src/scss/abstracts/functions' as *;
+@use '~src/scss/abstracts/mixins' as *;
+
+.header {
+  min-height: 3.571em;
+  color: get-color(light, 2);
+  background-color: get-color(dark, 0);
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(50px, 15%) 1fr min-content minmax(25px, 5vw);
+  @include md {
+    min-height: 3em;
+    grid-template-columns: minmax(135px, 9.2%) 1fr min-content minmax(80px, 5.3%);
+  }
+}
+.header__title {
+  font-size: 0.88rem;
+  color: get-color(light, 1);
+  margin-bottom: -0.081rem;
+}
+.header__logo-img {
+  max-width: 26px;
+  max-height: 21px;
+  justify-self: end;
+  margin-right: 11px;
+  transform: scale(0.96);
+
+  @include md {
+    margin-right: 33px;
+    transform: scale(1);
+  }
+}
+.header__contribute-link {
+  font-size: 1rem;
+  padding: 0.313em 1.55em;
+  min-height: 2em;
+  color: get-color(light, 1);
+  background-color: get-color(light, overlay);
+  color: get-color(light, 1);
+  min-width: 116px;
+  width: fit-content;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 4px;
+
+  @include md {
+    font-size: 0.875rem;
+    min-height: 2.2em;
+    padding: 7px 18px;
+    min-width: 212px;
+  }
+
+  .gh-logo {
+    margin-right: 11px;
+    @include md {
+      margin-right: 16.5px;
+    }
+  }
+
+  .before-gh {
+    display: none;
+    @include md{
+      display: initial;
+    }
+  }
+
+
+
+}

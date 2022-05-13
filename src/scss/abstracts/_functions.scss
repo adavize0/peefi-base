@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+/* ==== CSS color variable names ===*/
+@function get-color($color-group, $color-name) {
+  // check if valid group name in colors
+  @if map-has-key($colors, $color-group) {
+    $group: map-get($colors, $color-group);
+    // check if valid color name in group
+    @if map-has-key($group, $color-name) {
+      @debug "hereee";
+
+      @return var(--color-#{$color-group}-#{$color-name});
+    } @else {
+      @error 'Invalid color name "#{$color-name}"';
+    }
+  }
+
+  @error 'Invalid color group "#{$color-group}"';
+}

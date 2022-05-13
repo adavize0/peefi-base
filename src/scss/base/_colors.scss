@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as *;
+
+:root{
+  @each $group-name, $group in $colors {
+    @each $color-name, $color in $group {
+      --color-#{$group-name}-#{$color-name}: #{$color};
+    }
+  }
+}
+
+
