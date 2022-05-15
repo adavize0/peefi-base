@@ -1,70 +1,170 @@
-@use '~src/scss/abstracts/functions' as *;
-@use '~src/scss/abstracts/mixins' as *;
+@use "~src/scss/abstracts/mixins" as *;
+@use "~src/scss/abstracts/variables" as *;
+.main {
+  flex: 1;
+}
 
-.header {
-  min-height: 3.571em;
-  color: get-color(light, 2);
-  background-color: get-color(dark, 0);
+// JUMBOTRON
+.jumbo-s {
+  min-height: fit-content;
+  height: 100vh;
+  .false-header {
+    width: 100%;
+    @include header-height;
+  }
+}
+
+.jumbo-s__inner-bg {
+  flex-grow: 1;
   display: grid;
-  align-items: center;
-  grid-template-columns: minmax(50px, 15%) 1fr min-content minmax(25px, 5vw);
-  @include md {
-    min-height: 3em;
-    grid-template-columns: minmax(135px, 9.2%) 1fr min-content minmax(80px, 5.3%);
-  }
-}
-.header__title {
-  font-size: 0.88rem;
-  color: get-color(light, 1);
-  margin-bottom: -0.081rem;
-}
-.header__logo-img {
-  max-width: 26px;
-  max-height: 21px;
-  justify-self: end;
-  margin-right: 11px;
-  transform: scale(0.96);
+  grid-auto-flow: column;
+  grid-template-rows: 0.165fr 0.616fr 0.219fr;
+  background: linear-gradient(
+    95.46deg,
+    #302a36 -4.62%,
+    #3c2454 15.14%,
+    #422360 50.51%,
+    #452763 75.83%,
+    #381858 106.61%
+  );
 
   @include md {
-    margin-right: 33px;
-    transform: scale(1);
+    min-height: fit-content;
+    flex-grow: 1.745;
+    grid-template-rows: none;
+    grid-template-columns: minmax(100px, 9.2%) auto minmax(25px, 5vw);
+    align-content: stretch;
   }
 }
-.header__contribute-link {
-  font-size: 1rem;
-  padding: 0.313em 1.55em;
-  min-height: 2em;
-  color: get-color(light, 1);
-  background-color: get-color(light, overlay);
-  color: get-color(light, 1);
-  min-width: 116px;
-  width: fit-content;
+
+.jumbo-s__content {
   display: flex;
-  justify-content: start;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  border-radius: 4px;
+  grid-area: 2/1/-2/-1;
 
   @include md {
-    font-size: 0.875rem;
-    min-height: 2.2em;
-    padding: 7px 18px;
-    min-width: 212px;
+    flex-direction: row;
+    grid-area: 1/2/-1/-2;
   }
-
-  .gh-logo {
-    margin-right: 11px;
-    @include md {
-      margin-right: 16.5px;
-    }
-  }
-
-  .before-gh {
-    display: none;
-    @include md{
-      display: initial;
-    }
-  }
-
-
-
 }
+
+.jumbo-s__copy-area {
+  max-width: 86%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include md {
+    max-width: 55%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  @include lg {
+    max-width: 592px;
+  }
+}
+
+.jumbo-s__headline {
+  font-size: 1.845rem;
+  line-height: 140%;
+  margin-bottom: 18px;
+
+  @include md {
+    font-size: 3.22rem;
+    margin-bottom: 22px;
+  }
+}
+.jumbo-s__lead {
+  font-size: 1.125rem;
+  line-height: 150%;
+  margin-bottom: 31px;
+
+  @include md {
+    margin-bottom: 51px;
+  }
+}
+
+.jumbo-s__cta-btn {
+  display: block;
+  padding: 13px 40px;
+  min-height: 40px;
+  min-width: 188px;
+
+  @include md {
+    font-size: 1.125rem;
+    padding: 16px 43px;
+    min-height: 48px;
+    min-width: 226px;
+  }
+}
+
+.jumbo-s__illustration.ufo-container {
+  order: -1;
+  margin: 0 auto;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 30%;
+  margin-bottom: 40px;
+
+  @include md {
+    order: 0;
+  }
+}
+
+.direct-down {
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0.225;
+  position: absolute;
+  overflow: visible;
+  bottom: 0;
+
+  .ic-down-arr {
+    font-size: 1rem;
+    color: #C891F4;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include md {
+    position: static;
+    height: auto;
+    flex: 1;
+  }
+}
+
+
+.footer {
+  width: 100%;
+  min-height: 53px;
+}
+
+.footer__copy {
+ font-size:  0.94rem;
+
+ .underline::after {
+   font-size: 11px;
+    color: #7E7E7E;
+    display: inline-block;
+    position: absolute;
+    font-family: $icomoon-font-family;
+    content: $ic-link-arr;
+    font-weight: 600;
+    top: 2px;
+    right: -15px;
+
+    @include md {
+      font-size: 10px;
+    }
+ }
+}
+

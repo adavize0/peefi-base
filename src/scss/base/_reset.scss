@@ -1,4 +1,4 @@
-@use '../abstracts/functions' as *;
+@use "../abstracts/functions" as *;
 
 * {
   margin: 0;
@@ -7,28 +7,51 @@
   font-weight: 400;
 }
 
-html{
+html {
   min-height: 100%;
 }
 
 body {
-  // overflow-x: hidden;
+  width: 100%;
   max-width: 100vw;
   min-height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
 }
-
 /* IMAGES */
 img {
   max-width: 100%;
   object-fit: cover;
 }
 
-/* LINKS RESET */
 a {
+  color: inherit;
   background-color: inherit;
   text-decoration: none;
 }
 
+button {
+  font-size: 1em;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+abbr {
+  text-decoration: none;
+}
+
+button,
+input,
+a {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+input:focus {
+  outline: none;
+}

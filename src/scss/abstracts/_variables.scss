@@ -1,16 +1,20 @@
+$font-weight--black: 900;
+$font-weight--semi-bold: 600;
+
 $colors: (
   "primary": (
     0: #7942A5,
     1: #DCB0FF,
-    2: #F5E8FF,
+    2: #7942A5,
+    3: #F5E8FF,
     dark: #302A36,
 
   ),
   "light": (
     0: hsl(0, 0%, 100%),
     1: hsla(0, 0%, 100%, 0.95),
-    2: hsl(0, 0%, 99%),
-    overlay: hsla(0, 0%, 100%, 0.16),
+    2: hsla(0, 0%, 100%, 0.9),
+    3: hsla(0, 0%, 100%, 0.85)
   ),
   "dark": (
     0: hsl(273, 35%, 6%),
@@ -19,4 +23,24 @@ $colors: (
     3: hsla(273, 35%, 6%, 0.8),
     4: hsla(273, 35%, 6%, 0.75),
   ),
+  "overlay": (
+    "white-1": hsla(0, 0%, 100%, 0.16),
+  )
 );
+
+// Global z-index
+$z-index: (
+  "header": 900,
+);
+
+
+
+// Icomoon generated icons
+$icomoon-font-family: "peefi" !default;
+$icomoon-font-path: "icon-fonts" !default;
+
+$ic-down-arr: "\e900";
+$ic-link-arr: "\e901";
+$ic-terminal: "\e902";
+
+

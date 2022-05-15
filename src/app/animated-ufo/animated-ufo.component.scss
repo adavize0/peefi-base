@@ -1,0 +1,6 @@
+@use "~src/scss/abstracts/mixins" as *;
+@use "~src/scss/abstracts/variables" as *;
+
+#object {
+  transform: rotateZ(15deg);
+}

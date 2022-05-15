@@ -1,13 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap");
 
 :root {
-  font-family: 'Inter', sans-serif, Helvetica;
+  font-family: "Inter", sans-serif, Helvetica;
   font-size: 16px;
+
+  @include md {
+    @media (-webkit-min-device-pixel-ratio: 1.5) {
+      font-size: 15px;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      font-size: 14px;
+    }
+  }
+
 }
 
-.fw-black {
-  font-weight: 900;
+.fw--black {
+  font-weight: $font-weight--black;
 }
 .fw--semi {
-  font-weight: 600;
+  font-weight: $font-weight--semi-bold;
 }

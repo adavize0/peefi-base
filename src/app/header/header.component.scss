@@ -1,0 +1,71 @@
+
+@use "~src/scss/abstracts/mixins" as *;
+@use "~src/scss/abstracts/variables" as *;
+
+.header {
+  @include header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: map-get($z-index, header);
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(50px, 15%) 1fr min-content minmax(25px, 5vw);
+  @include md {
+    grid-template-columns: minmax(135px, 9.2%) 1fr min-content minmax(
+        80px,
+        5.3%
+      );
+  }
+}
+.header__title {
+  font-size: 1rem;
+  margin-bottom: -0.081rem;
+  @include md {
+    font-size: 0.86rem;
+  }
+}
+.header__logo-img {
+  max-width: 26px;
+  max-height: 21px;
+  justify-self: end;
+  margin-right: 11px;
+  transform: scale(0.96);
+
+  @include md {
+    margin-right: 33px;
+    transform: scale(1);
+  }
+}
+.header__contribute-link {
+  font-size: 1rem;
+  padding: 0.313em 1.55em;
+  min-height: 2em;
+  min-width: 116px;
+  width: fit-content;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  @include md {
+    font-size: 0.875rem;
+    min-height: 2.2em;
+    padding: 7px 18px;
+    min-width: 212px;
+  }
+
+  .gh-logo {
+    margin-right: 11px;
+    @include md {
+      margin-right: 16.5px;
+    }
+  }
+
+  .before-gh {
+    display: none;
+    @include md {
+      display: initial;
+    }
+  }
+}

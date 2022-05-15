@@ -1,0 +1,116 @@
+@use "~src/scss/abstracts/mixins" as *;
+@use "~src/scss/abstracts/variables" as *;
+
+
+.search-s {
+  min-height: 50vh;
+
+  @include md {
+    display: grid;
+    grid-template-columns: minmax(100px, 9.2%) 1fr min-content minmax(
+      100px,
+      9.2%
+    );
+  }
+}
+
+.search-s__form {
+  margin: auto;
+  width: 100%;
+  padding: 77px 0;
+
+  @include md {
+    grid-area:  1/2/-1/-2;
+  }
+}
+.search-s__form--inner {
+  width: 88%;
+  max-width: 460px;
+  margin: auto;
+  align-items: center;
+
+  @include md {
+    width: 100%;
+    max-width: 814px;
+  }
+}
+
+/*  SEARCH BOX MD DIMENSIONS  */
+$search-btn--width: 188px;
+$search-box--height: 89px;
+/*  --------------------  */
+
+.search-s__lbl {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 1.3rem;
+  align-self: flex-start;
+
+  @include sm {
+    font-size: 1.55rem;
+  }
+
+  @include md {
+    align-self: center;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 51px;
+  }
+}
+
+.search-s__input-x-btn-wrapper {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  @include md {
+    flex-direction: row;
+    align-self: center;
+    align-items: stretch;
+    justify-content: center;
+    height: $search-box--height;
+  }
+}
+.search-s__search-box {
+  width: 100%;
+  padding: 13px 18px;
+  min-height: 43px;
+  border: 1px solid rgba(121, 66, 165, 0.7);
+  font-size: 1rem;
+  margin: 0 0 24px 0;
+
+  &:focus {
+    border: 2px solid #7942A5;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.11);
+  }
+
+  @include md {
+    margin: 0;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    padding: 30px ($search-btn--width + 3) 30px 50px;
+  }
+}
+
+.search-s__search-btn {
+  font-size: 1rem;
+  min-width: 163px;
+  min-height: 40px;
+  padding: 13px 20px;
+  align-self: flex-end;
+
+  @include md {
+    font-size: 1.5rem;
+    font-weight: $font-weight--black;
+    width: $search-btn--width;
+    border-radius: 0px 8px 8px 0px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  @include lg {
+    font-size: 1.755rem;
+  }
+}

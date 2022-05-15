@@ -1,0 +1,93 @@
+@use "../abstracts/variables" as *;
+
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.br--4{
+  border-radius: 4px;
+}
+
+.flex {
+  display: flex;
+}
+
+.center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.flex--col {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.flex--row {
+ @extend .flex;
+ flex-direction: row;
+}
+.flex--j-space-btw {
+  @extend .flex;
+  justify-content: space-between;
+}
+
+// Generate primary text colors
+@each $color-key, $color-val in map-get($map: $colors, $key: primary) {
+  .cl--pry-#{$color-key} {
+    color: $color-val;
+  }
+}
+
+// Generate primary background colors
+@each $color-key, $color-val in map-get($map: $colors, $key: primary) {
+  .bg--pry-#{$color-key} {
+    background-color: $color-val;
+  }
+}
+
+// Generate dark text colors;
+@each $color-key, $color-val in map-get($map: $colors, $key: dark) {
+  .cl--dark-#{$color-key} {
+    color: $color-val;
+  }
+}
+
+// Generate dark background colors
+@each $color-key, $color-val in map-get($map: $colors, $key: dark) {
+  .bg--dark-#{$color-key} {
+    background-color: $color-val;
+  }
+}
+
+// Generate light text colors
+@each $color-key, $color-val in map-get($map: $colors, $key: light) {
+  .cl--light-#{$color-key} {
+    color: $color-val;
+  }
+}
+
+// Generate light background colors
+@each $color-key, $color-val in map-get($map: $colors, $key: light) {
+  .bg--light-#{$color-key} {
+    background-color: $color-val;
+  }
+}
+
+// Generate overlay background colors
+@each $color-key, $color-val in map-get($map: $colors, $key: overlay) {
+  .bg--overlay-#{$color-key} {
+    background-color: $color-val;
+  }
+}

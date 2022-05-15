@@ -1,6 +1,13 @@
 // MEDIA QUERIES
+// Mobile first queries -> min-width
+@mixin tny {
+  @media only screen and (min-width: 335px) {
+    @content;
+  }
+}
+
 @mixin sm {
-  @media only screen and (min-width: 300px) {
+  @media only screen and (min-width: 500px) {
     @content;
   }
 }
@@ -12,13 +19,20 @@
 }
 
 @mixin lg {
-  @media only screen and (min-width: 400px) {
+  @media only screen and (min-width: 1100px) {
     @content;
   }
 }
 
 @mixin xl {
-  @media only screen and (min-width: 400px) {
+  @media only screen and (min-width: 1600px) {
     @content;
+  }
+}
+
+@mixin header-height {
+  min-height: 3.571em;
+  @include md {
+    min-height: 3em;
   }
 }

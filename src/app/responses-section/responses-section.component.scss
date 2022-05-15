@@ -1,0 +1,85 @@
+
+@use "~src/scss/abstracts/mixins" as *;
+@use "~src/scss/abstracts/variables" as *;
+@use "~src/scss/abstracts/functions" as *;
+
+.responses-s {
+  min-height: 50vh;
+  padding: 40px 6vw 80px 6vw;
+
+  @include md {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: minmax(100px, 9.2%) 1fr min-content minmax(
+      100px,
+      5.3%
+    );
+
+  }
+}
+
+.responses-s__inner {
+  grid-area:  1/2/-1/-2;
+}
+
+.responses-s__header {
+  align-items: center;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(210, 196, 214, 0.4);
+  margin-bottom: 40px;
+}
+.response-s__heading {
+  font-size: 1.15rem;
+  @include tny {
+    font-size: 1.32rem;
+  }
+  @include md {
+    font-size: 1.6875rem;
+  }
+}
+
+.responses-s__clear-btn {
+  padding: 6px 25px;
+  font-size: .88rem;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0);
+  color: get-color(primary, 2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  @include md {
+    text-decoration: none;
+    color: get-color(light, 0);
+    background-color: get-color(primary, 0);
+  }
+}
+.response__question-heading {
+  font-size: 1.125rem;
+  margin-bottom: 23px;
+
+  @include md {
+    margin-bottom: 30px;
+  }
+}
+.response__answer-container {
+  border-radius: 4px;
+  background-color: get-color(primary, 3);
+  min-height: 51px;
+  padding: 16px 16px 16px 26px;
+  font-size: 1rem;
+  line-height: 150%;
+
+  @include md {
+    padding: 16px 26px 16px 35px;
+    font-size: 1.125rem;
+    line-height: 142%;
+  }
+
+  @include lg {
+    max-width: 65%;
+    p {
+      max-width: 95%;
+    }
+  }
+
+}
