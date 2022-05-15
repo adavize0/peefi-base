@@ -46,6 +46,7 @@
 
   @include md {
     flex-direction: row;
+    justify-content: space-between;
     grid-area: 1/2/-1/-2;
   }
 }
@@ -69,10 +70,9 @@
 }
 
 .jumbo-s__headline {
-  font-size: 1.845rem;
   line-height: 140%;
   margin-bottom: 18px;
-
+  font-size: 1.845rem;
   @include md {
     font-size: 3.22rem;
     margin-bottom: 22px;
@@ -89,10 +89,12 @@
 }
 
 .jumbo-s__cta-btn {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 13px 40px;
   min-height: 40px;
   min-width: 188px;
+
 
   @include md {
     font-size: 1.125rem;
@@ -105,13 +107,24 @@
 .jumbo-s__illustration.ufo-container {
   order: -1;
   margin: 0 auto;
-  height: fit-content;
-  width: fit-content;
-  border-radius: 30%;
+  flex-grow: 1;
+  width: 37%;
+  min-width: 120px;
+  max-width: 200px;
   margin-bottom: 40px;
 
   @include md {
+    width: 26%;
+    min-width: 240px;
+    max-width: 340px;
+    min-height: 334px;
     order: 0;
+    margin: 0 4% 0 10%;
+    align-items: center;
+  }
+
+  @include lg {
+    min-width: 280px;
   }
 }
 

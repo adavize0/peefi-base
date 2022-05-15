@@ -3,4 +3,11 @@
 
 #object {
   transform: rotateZ(15deg);
+  position: absolute;
+  bottom: 0;
+
+  @include md {
+    bottom: unset;
+  }
+
 }
