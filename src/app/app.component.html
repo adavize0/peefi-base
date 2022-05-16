@@ -12,7 +12,9 @@
             Get <abbr title="Artificial Intelligence">AI</abbr> generated
             answers to your questions online, fast and simple.
           </p>
-          <button class="jumbo-s__cta-btn fw--semi br--4 cl--dark-4 bg--pry-1">
+          <button class="jumbo-s__cta-btn fw--semi br--4 cl--dark-4 bg--pry-1"
+          (click)="scrollToSearch()"
+          >
             Start asking&nbsp;&nbsp;<i class="ic-terminal"></i>
           </button>
         </div>
@@ -24,13 +26,17 @@
       <i class="ic-down-arr"></i>
     </div>
   </section>
-  <app-search-section></app-search-section>
+  <app-search-section #searchSection></app-search-section>
   <app-responses-section></app-responses-section>
 </main>
 <footer class="footer bg--dark-0 center-all" role="contentinfo">
   <p class="footer__copy cl--light-0">
     Powered by
-    <a class="underline rel" href="https://openai.com" rel="noopener noreferrer" target="_blank"
+    <a
+      class="underline rel"
+      href="https://openai.com"
+      rel="noopener noreferrer"
+      target="_blank"
       >OpenAI</a
     >
   </p>

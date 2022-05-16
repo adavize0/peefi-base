@@ -2,13 +2,27 @@
   <div class="responses-s__inner">
     <div class="flex--j-space-btw responses-s__header">
       <h1 class="response-s__heading cl--dark-2 fw--semi">Responses</h1>
-      <button class="responses-s__clear-btn br--4 fw--semi" (click)="onClearClick()">Clear History</button>
+      <button
+        class="responses-s__clear-btn br--4 fw--semi"
+        (click)="onClearClick()"
+      >
+        Clear History
+      </button>
     </div>
-    <p class="response-s__no-response" hidden>No response yet. Your responses will appear here when you ask a question</p>
+    <p
+      class="response-s__no-response text-center cl--dark-2"
+      *ngIf="(responses$ | async)?.length == 0"
+    >
+      No response yet. Your responses will appear here when you ask a question
+    </p>
     <ol class="responses">
-      <li class="responses__item response" *ngFor="let response of responses$ | async">
+      <li
+        class="responses__item response"
+        *ngFor="let response of responses$ | async"
+      >
         <h2 class="response__question-heading fw--semi cl--dark-1" id="q-1">
-          <span aria-hidden="true" class="fw--semi">Q:&nbsp;</span>{{ response.question }}
+          <span aria-hidden="true" class="fw--semi">Q:&nbsp;</span
+          >{{ response.question }}
         </h2>
         <div aria-labelledby="q-1" class="response__answer-container">
           <p class="response__answer cl--dark-2">{{ response.answer }}</p>

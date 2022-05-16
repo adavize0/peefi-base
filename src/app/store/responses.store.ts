@@ -8,7 +8,18 @@ const LOCAL_STORAGE_KEY = 'responses';
   providedIn: 'root',
 })
 export class ResponsesStoreService {
-  private responsesSubject: BehaviorSubject<ResponseI[]> = new BehaviorSubject<ResponseI[]>([])
+  private responsesSubject: BehaviorSubject<ResponseI[]> = new BehaviorSubject<
+    ResponseI[]
+  >([
+    {
+      question: "Who's your dadddyyyy?",
+      answer: 'You know who',
+    },
+    {
+      question: "Who's with the moneyy!!",
+      answer: "Otedola dey borrow from me"
+    }
+  ]);
   responses$: Observable<ResponseI[]> = this.responsesSubject.asObservable();
   constructor() {
     // Load from local storage on initialize

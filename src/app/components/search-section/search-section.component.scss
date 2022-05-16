@@ -1,16 +1,21 @@
 @use "~src/scss/abstracts/mixins" as *;
 @use "~src/scss/abstracts/variables" as *;
 
-
+:host {
+  scroll-margin: 25px;
+  @include md {
+    scroll-margin: 45px;
+  }
+}
 .search-s {
   min-height: 50vh;
-
+  padding: 20px;
   @include md {
     display: grid;
     grid-template-columns: minmax(100px, 9.2%) 1fr min-content minmax(
-      100px,
-      9.2%
-    );
+        100px,
+        9.2%
+      );
   }
 }
 
@@ -20,7 +25,7 @@
   padding: 77px 0;
 
   @include md {
-    grid-area:  1/2/-1/-2;
+    grid-area: 1/2/-1/-2;
   }
 }
 .search-s__form--inner {
@@ -80,7 +85,7 @@ $search-box--height: 89px;
   margin: 0 0 24px 0;
 
   &:focus {
-    border: 2px solid #7942A5;
+    border: 2px solid #7942a5;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.11);
   }
 

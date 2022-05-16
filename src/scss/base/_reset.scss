@@ -1,5 +1,12 @@
 @use "../abstracts/functions" as *;
 
+html {
+  scroll-behavior: smooth;
+  @media (prefers-reduced-motion){
+    scroll-behavior: auto;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
