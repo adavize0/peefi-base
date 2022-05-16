@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SearchSectionComponent } from './search-section/search-section.component';
-import { ResponsesSectionComponent } from './responses-section/responses-section.component';
-import { AnimatedUFOComponent } from './animated-ufo/animated-ufo.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchSectionComponent } from './components/search-section/search-section.component';
+import { ResponsesSectionComponent } from './components/responses-section/responses-section.component';
+import { AnimatedUFOComponent } from './components/animated-ufo/animated-ufo.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,10 @@ import { AnimatedUFOComponent } from './animated-ufo/animated-ufo.component';
     HeaderComponent,
     SearchSectionComponent,
     ResponsesSectionComponent,
-    AnimatedUFOComponent
+    AnimatedUFOComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
