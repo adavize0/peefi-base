@@ -14,7 +14,6 @@ import { SearchService } from 'src/app/services/search.service';
 export class SearchSectionComponent {
   @ViewChild('searchInput') searchInput: ElementRef | undefined;
   isSubmitting: boolean = false;
-  searchString: string = '';
 
   constructor(
     private _element: ElementRef,
@@ -25,9 +24,10 @@ export class SearchSectionComponent {
     });
   }
 
-  onSearchFormSubmit(formValues: { searchInput: string }) {
-    if (this.isSubmitting) return;
-    this.searchService.search(formValues.searchInput);
+  onSearchFormSubmit(event: SubmitEvent) {
+    event.preventDefault()
+    if (this.isSubmitting || this.searchInput?.nativeElement.value === "") return;
+    this.searchService.search(this.searchInput?.nativeElement.value);
   }
 
   focus() {

@@ -8,6 +8,7 @@ import { SearchSectionComponent } from './components/search-section/search-secti
 import { ResponsesSectionComponent } from './components/responses-section/responses-section.component';
 import { AnimatedUFOComponent } from './components/animated-ufo/animated-ufo.component';
 import { FormsModule } from '@angular/forms';
+import { ToastComponent } from './components/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { FormsModule } from '@angular/forms';
     SearchSectionComponent,
     ResponsesSectionComponent,
     AnimatedUFOComponent,
+    ToastComponent
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

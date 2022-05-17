@@ -1,9 +1,5 @@
 <section class="search-s" aria-label="Enter your question">
-  <form
-    class="search-s__form"
-    #searchForm="ngForm"
-    (ngSubmit)="(onSearchFormSubmit(searchForm.value))"
-  >
+  <form class="search-s__form" (submit)="onSearchFormSubmit($event)">
     <div role="search" class="search-s__form--inner flex-col">
       <label for="search-box" class="search-s__lbl fw--black cl--dark-2"
         >Enter your question</label
@@ -15,9 +11,8 @@
           type="search"
           maxlength="80"
           required
-          autocomplete="off"
           #searchInput
-          (ngModel)="(searchInput)"
+          autocomplete="off"
           name="searchInput"
         />
         <button

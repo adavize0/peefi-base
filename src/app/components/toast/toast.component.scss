@@ -1,0 +1,17 @@
+
+@use "~src/scss/abstracts/mixins" as *;
+
+.toast-body {
+  background-color: rgb(240, 9, 74);
+  min-height: fit-content;
+  font-size: 16px;
+  max-width: 100%;
+  text-align: center;
+  padding: 15px 20px;
+  min-width: 70%;
+  line-height: 130%;
+
+  @include md {
+    min-width: 300px;
+  }
+}

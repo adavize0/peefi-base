@@ -1,6 +1,14 @@
 @use "~src/scss/abstracts/mixins" as *;
 @use "~src/scss/abstracts/variables" as *;
 @use "~src/scss/abstracts/functions" as *;
+
+#toast-outlet {
+  position: fixed;
+  top: 7vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: map-get($z-index, toast);
+}
 .main {
   flex: 1;
 }
