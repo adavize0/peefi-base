@@ -23,6 +23,7 @@ export class APIService {
       URL,
       requestBody, {
       headers: REQUEST_HEADERS,
-    }).pipe(retry(2))
+    })
+    // .pipe(retry(2))
   }
 }

@@ -33,10 +33,9 @@ export class SearchService {
       ...this.requestConfig,
     }).pipe(
       // Handle Errors
-      catchError((err, obs) => {
-        console.error(err)
-        return obs
-      }),
+      // catchError((err, obs) => {
+
+      // }),
       // Transform response
       map((resData: SearchRequestResponseI) => {
         const response: ResponseI = {
