@@ -21,8 +21,8 @@ export class SearchSectionComponent {
 
   onAskClick() {
     if (this.isSubmitting) return;
-
-    this.searchService.search('hi');
+    console.log("Clicked")
+    this.searchService.search('Write a poem about a dog wearing skis');
   }
 
   focus() {
