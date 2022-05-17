@@ -1,5 +1,6 @@
 @use "~src/scss/abstracts/mixins" as *;
 @use "~src/scss/abstracts/variables" as *;
+@use "~src/scss/abstracts/functions" as *;
 .main {
   flex: 1;
 }
@@ -94,7 +95,12 @@
   padding: 13px 40px;
   min-height: 40px;
   min-width: 188px;
-
+  &:hover {
+    transition: 500ms opacity ease, 300ms transform ease;
+    opacity: 0.87;
+    transform: scale(1.03);
+    transform-origin: top;
+  }
 
   @include md {
     font-size: 1.125rem;

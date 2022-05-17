@@ -1,14 +1,16 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-search-section',
   templateUrl: './search-section.component.html',
   styleUrls: ['./search-section.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchSectionComponent {
   @ViewChild('searchInput') searchInput: ElementRef | undefined;
   isSubmitting: boolean = false;
+  searchString: string = "";
 
   constructor(
     private _element: ElementRef,
@@ -19,10 +21,10 @@ export class SearchSectionComponent {
     });
   }
 
-  onAskClick() {
+
+  onSearchFormSubmit(formValues: {searchString: string}){
     if (this.isSubmitting) return;
-    console.log("Clicked")
-    this.searchService.search('Write a poem about a dog wearing skis');
+    this.searchService.search(formValues.searchString)
   }
 
   focus() {
@@ -31,6 +33,7 @@ export class SearchSectionComponent {
     }
 
     const el = this._element.nativeElement as HTMLElement
+
     el.scrollIntoView({
       block: 'start',
       inline: 'start',

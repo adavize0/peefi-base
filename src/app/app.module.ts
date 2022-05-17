@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchSectionComponent } from './components/search-section/search-section.component';
 import { ResponsesSectionComponent } from './components/responses-section/responses-section.component';
 import { AnimatedUFOComponent } from './components/animated-ufo/animated-ufo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AnimatedUFOComponent } from './components/animated-ufo/animated-ufo.com
     ResponsesSectionComponent,
     AnimatedUFOComponent,
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

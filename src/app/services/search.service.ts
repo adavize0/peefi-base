@@ -38,9 +38,10 @@ export class SearchService {
       // }),
       // Transform response
       map((resData: SearchRequestResponseI) => {
+        const resText: string = resData.choices[0].text
         const response: ResponseI = {
           question,
-          answer: resData.choices[0].text,
+          answer: resText[0] === "?" ? resText.substring(1) : resText,
         }
         return response
       }),
