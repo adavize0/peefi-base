@@ -5,6 +5,17 @@
   flex: 1;
 }
 
+@keyframes fade-in {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 // JUMBOTRON
 .jumbo-s {
   min-height: fit-content;
@@ -13,13 +24,7 @@
     width: 100%;
     @include header-height;
   }
-}
-
-.jumbo-s__inner-bg {
-  flex-grow: 1;
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: 0.165fr 0.616fr 0.219fr;
+  background-color: #3c2454;
   background: linear-gradient(
     95.46deg,
     #302a36 -4.62%,
@@ -28,6 +33,13 @@
     #452763 75.83%,
     #381858 106.61%
   );
+}
+
+.jumbo-s__inner-bg {
+  flex-grow: 1;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 0.165fr 0.616fr 0.219fr;
 
   @include md {
     min-height: fit-content;
@@ -35,6 +47,11 @@
     grid-template-rows: none;
     grid-template-columns: minmax(100px, 9.2%) auto minmax(25px, 5vw);
     align-content: stretch;
+  }
+  @include xl {
+    max-width: 1550px;
+    width: 100%;
+    align-self: center;
   }
 }
 
@@ -74,6 +91,8 @@
   line-height: 140%;
   margin-bottom: 18px;
   font-size: 1.845rem;
+  opacity: 0;
+  animation: fade-in 1s 0.5s forwards;
   @include md {
     font-size: 3.22rem;
     margin-bottom: 22px;
@@ -83,7 +102,8 @@
   font-size: 1.125rem;
   line-height: 150%;
   margin-bottom: 31px;
-
+  opacity: 0;
+  animation: fade-in 1s 0.8s forwards;
   @include md {
     margin-bottom: 51px;
   }
@@ -95,6 +115,8 @@
   padding: 13px 40px;
   min-height: 40px;
   min-width: 188px;
+  opacity: 0;
+  animation: fade-in 1s 1.3s forwards;
   &:hover {
     transition: 500ms opacity ease, 300ms transform ease;
     opacity: 0.87;
@@ -118,6 +140,8 @@
   min-width: 120px;
   max-width: 200px;
   margin-bottom: 40px;
+  opacity: 0;
+  animation: fade-in 1s 1s forwards;
 
   @include md {
     width: 26%;
@@ -135,6 +159,7 @@
 }
 
 .direct-down {
+  background-color: white;
   width: 100%;
   height: 18vh;
   display: flex;
@@ -147,7 +172,7 @@
 
   .ic-down-arr {
     font-size: 1rem;
-    color: #C891F4;
+    color: #c891f4;
 
     @include md {
       font-size: 1.5rem;
@@ -158,9 +183,9 @@
     position: static;
     height: auto;
     flex: 1;
+    margin-bottom: -1px;
   }
 }
-
 
 .footer {
   width: 100%;
@@ -168,11 +193,11 @@
 }
 
 .footer__copy {
- font-size:  0.94rem;
+  font-size: 0.94rem;
 
- .underline::after {
-   font-size: 11px;
-    color: #7E7E7E;
+  .underline::after {
+    font-size: 11px;
+    color: #7e7e7e;
     display: inline-block;
     position: absolute;
     font-family: $icomoon-font-family;
@@ -184,6 +209,5 @@
     @include md {
       font-size: 10px;
     }
- }
+  }
 }
-

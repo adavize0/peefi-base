@@ -18,6 +18,9 @@
         5.3%
       );
   }
+  @include xl {
+    grid-template-columns: 21.5% 1fr min-content 21%
+  }
 }
 .header__title {
   font-size: 1rem;

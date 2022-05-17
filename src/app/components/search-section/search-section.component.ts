@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
 
 @Component({
@@ -10,7 +14,7 @@ import { SearchService } from 'src/app/services/search.service';
 export class SearchSectionComponent {
   @ViewChild('searchInput') searchInput: ElementRef | undefined;
   isSubmitting: boolean = false;
-  searchString: string = "";
+  searchString: string = '';
 
   constructor(
     private _element: ElementRef,
@@ -21,10 +25,9 @@ export class SearchSectionComponent {
     });
   }
 
-
-  onSearchFormSubmit(formValues: {searchString: string}){
+  onSearchFormSubmit(formValues: { searchInput: string }) {
     if (this.isSubmitting) return;
-    this.searchService.search(formValues.searchString)
+    this.searchService.search(formValues.searchInput);
   }
 
   focus() {
@@ -32,12 +35,12 @@ export class SearchSectionComponent {
       console.error('Search input element not found');
     }
 
-    const el = this._element.nativeElement as HTMLElement
+    const el = this._element.nativeElement as HTMLElement;
 
     el.scrollIntoView({
       block: 'start',
       inline: 'start',
     });
-    // this.searchInput?.nativeElement.focus();
+    this.searchInput?.nativeElement.focus({ preventScroll: true });
   }
 }
