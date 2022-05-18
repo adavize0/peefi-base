@@ -19,7 +19,7 @@ export class ToastComponent implements OnInit {
       if(this.messageQueue.length){
         this.startDisplay(this.messageQueue.shift() as string)
       }
-    }, 2000)
+    }, 4000)
   }
 
   constructor(private toastService: ToastService) {
