@@ -13,9 +13,32 @@
   flex: 1;
 }
 
-@keyframes fade-in {
+@keyframes headline-fade-in {
   0% {
-    transform: translateY(50px);
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes others-fade-in {
+  0% {
+    opacity: 0.2;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes button-fade-in {
+  0%,
+  10% {
+    transform: translateY(8px);
     opacity: 0;
   }
   100% {
@@ -99,8 +122,10 @@
   line-height: 140%;
   margin-bottom: 18px;
   font-size: 1.845rem;
-  opacity: 0;
-  animation: fade-in 1s 0.5s forwards;
+  @media not all and (prefers-reduced-motion) {
+    opacity: 0;
+    animation: headline-fade-in 0.8s 200ms ease forwards;
+  }
   @include md {
     font-size: 3.22rem;
     margin-bottom: 22px;
@@ -110,8 +135,10 @@
   font-size: 1.125rem;
   line-height: 150%;
   margin-bottom: 31px;
-  opacity: 0;
-  animation: fade-in 1s 0.8s forwards;
+  @media not all and (prefers-reduced-motion) {
+    opacity: 0;
+    animation: others-fade-in 1.1s 0.3s ease forwards;
+  }
   @include md {
     margin-bottom: 51px;
   }
@@ -123,8 +150,12 @@
   padding: 13px 40px;
   min-height: 40px;
   min-width: 188px;
-  opacity: 0;
-  animation: fade-in 1s 1.3s forwards;
+
+  @media not all and (prefers-reduced-motion) {
+    opacity: 0;
+    transform-origin: center;
+    animation: button-fade-in 0.8s 300ms ease forwards;
+  }
   &:hover {
     transition: 500ms opacity ease, 300ms transform ease;
     opacity: 0.87;
@@ -148,9 +179,10 @@
   min-width: 120px;
   max-width: 200px;
   margin-bottom: 40px;
-  opacity: 0;
-  animation: fade-in 1s 1s forwards;
-
+  @media not all and (prefers-reduced-motion) {
+    opacity: 0;
+    animation: others-fade-in 500ms 200ms ease forwards;
+  }
   @include md {
     width: 26%;
     min-width: 240px;
