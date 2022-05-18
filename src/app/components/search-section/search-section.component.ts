@@ -13,7 +13,7 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchSectionComponent {
   @ViewChild('searchInput') searchInput: ElementRef | undefined;
-  isSubmitting: boolean = false;
+  isSubmitting: boolean = true;
 
   constructor(
     private _element: ElementRef,

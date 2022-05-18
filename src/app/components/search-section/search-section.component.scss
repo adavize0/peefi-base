@@ -108,7 +108,9 @@ $search-box--height: 89px;
     transition: 400ms background-color ease;
     background-color: #824FAB;
   }
-
+  &.busy {
+    background-color: #d7a7ff;
+  }
   @include md {
     font-size: 1.5rem;
     font-weight: $font-weight--black;

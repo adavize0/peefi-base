@@ -21,6 +21,7 @@
         />
         <button
           class="search-s__search-btn bg--pry-0 cl--light-1 br--4 fw--semi"
+          [ngClass]="{busy: isSubmitting}"
           type="submit"
         >
           Ask
