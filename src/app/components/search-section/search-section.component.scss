@@ -103,10 +103,12 @@ $search-box--height: 89px;
   min-height: 40px;
   padding: 13px 20px;
   align-self: flex-end;
+
   &:hover {
     transition: 400ms background-color ease;
     background-color: #824FAB;
   }
+
   @include md {
     font-size: 1.5rem;
     font-weight: $font-weight--black;

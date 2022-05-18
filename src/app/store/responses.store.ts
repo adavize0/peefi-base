@@ -31,6 +31,7 @@ export class ResponsesStoreService {
     // Set new response
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newData));
     this.responsesSubject.next(newData);
+    document.getElementById("first-question")?.focus()
   }
 
   clearResponses(): void {

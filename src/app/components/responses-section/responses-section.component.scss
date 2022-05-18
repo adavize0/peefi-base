@@ -2,6 +2,12 @@
 @use "~src/scss/abstracts/variables" as *;
 @use "~src/scss/abstracts/functions" as *;
 
+:host {
+  scroll-margin: 25px;
+  @include md {
+    scroll-margin: 45px;
+  }
+}
 .responses-s {
   min-height: 50vh;
   padding: 40px 6vw 80px 6vw;
@@ -79,6 +85,7 @@
   }
 }
 .response__question-heading {
+  display: block;
   font-size: 1rem;
   margin-bottom: 18px;
 

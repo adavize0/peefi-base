@@ -1,6 +1,10 @@
 <section class="search-s" aria-label="Enter your question">
+  <h1 class="visually-hidden">Search AI database</h1>
   <form class="search-s__form" (submit)="onSearchFormSubmit($event)">
     <div role="search" class="search-s__form--inner flex-col">
+      <p role="status">
+        <span class="visually-hidden" *ngIf="isSubmitting">Searching</span>
+      </p>
       <label for="search-box" class="search-s__lbl fw--black cl--dark-2"
         >Enter your question</label
       >
