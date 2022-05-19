@@ -71,9 +71,25 @@
     font-size: 1.125rem;
   }
 }
+
+@keyframes breathe {
+  from {
+    background-color: #e7cbff;
+  }
+  to {
+    background-color: #f5e8ff;
+  }
+}
+
 .responses__item.response {
   padding: 20px 0;
-
+  .first-answer-container {
+    animation: breathe 500ms ease-in-out 100ms alternate forwards 3;
+    @media (prefers-reduced-motion) {
+      animation: none;
+      background-color: #e7cbff;
+    }
+  }
   @include sm {
     &:not(:last-child) {
       border-bottom: 1px solid #f1eff2;
@@ -97,7 +113,6 @@
 
 .response__answer-container {
   border-radius: 4px;
-  background-color: get-color(primary, 3);
   min-height: 51px;
   padding: 16px 16px 16px 26px;
   font-size: 1rem;

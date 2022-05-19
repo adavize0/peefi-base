@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, first, Observable } from 'rxjs';
 import { ResponseI } from '../interfaces/response.interface';
 
 const LOCAL_STORAGE_KEY = 'responses';
@@ -31,7 +31,6 @@ export class ResponsesStoreService {
     // Set new response
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newData));
     this.responsesSubject.next(newData);
-    document.getElementById("response-section")?.scrollIntoView()
   }
 
   clearResponses(): void {

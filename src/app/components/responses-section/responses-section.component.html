@@ -22,15 +22,15 @@
         class="responses__item response"
         aria-label="Question Item"
         *ngFor="let response of responses$ | async; let idx = index; let first = first;"
+        #responsesDOMLI
         tabindex="0"
-        [id]="first ? 'first-question' : ''"
         tabindex="-1"
       >
         <span class="response__question-heading fw--semi cl--dark-1">
           <span aria-hidden="true" class="fw--semi">Q:&nbsp;</span
           >{{ response.question }}
         </span>
-        <div [attr.aria-labelledby]="'qs'+ idx" class="response__answer-container">
+        <div [attr.aria-labelledby]="'qs'+ idx" class="response__answer-container bg--pry-3" [ngClass]="first && useBreatheAnimation ? 'first-answer-container' : ''">
           <p class="response__answer cl--dark-2">{{ response.answer }}</p>
         </div>
       </li>
