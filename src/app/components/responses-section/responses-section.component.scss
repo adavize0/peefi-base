@@ -31,6 +31,10 @@
   padding: 17px 0;
   border-bottom: 1px solid rgba(210, 196, 214, 0.4);
   margin-bottom: 20px;
+
+  @include md {
+    padding-bottom: 40px;
+  }
 }
 .response-s__heading {
   font-size: 1.15rem;
@@ -38,7 +42,6 @@
     font-size: 1.32rem;
   }
   @include md {
-    margin-bottom: 40px;
     font-size: 1.6875rem;
   }
 }
