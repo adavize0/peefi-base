@@ -28,13 +28,18 @@ export class ResponsesStoreService {
       newData = [response];
     }
 
-    // Set new response
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newData));
     this.responsesSubject.next(newData);
   }
 
+  demoResponse(question: string){
+    this.addNewResponse({
+      question: `[DEMO] ${question}`,
+      answer: "Hi there! This is a demo response I put because my developer subscription on OpenAI isn't active right now. Thanks for understanding :)"
+    })
+  }
+
   clearResponses(): void {
-    // Confirm clearing with user
     const confirmation: boolean = window.confirm(
       'Are you sure you want to clear the response history?'
     );

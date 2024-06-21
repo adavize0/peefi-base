@@ -24,6 +24,5 @@ export class APIService {
       requestBody, {
       headers: REQUEST_HEADERS,
     })
-    // .pipe(retry(2))
   }
 }

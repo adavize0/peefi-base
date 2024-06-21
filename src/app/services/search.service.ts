@@ -28,17 +28,14 @@ export class SearchService {
   };
 
   search(question: string) {
-    // Set asking state to true
     this.isAskingSubject.next(true);
 
-    // Send search API request
     this.api
       .postRequest(this.api.endpoints.QA_curie_001, {
         prompt: question,
         ...this.requestConfig,
       })
       .pipe(
-        // Transform response
         map((resData: SearchRequestResponseI) => {
           const resText: string = resData.choices[0].text;
           const response: ResponseI = {
@@ -47,15 +44,15 @@ export class SearchService {
           };
           return response;
         }),
-        // Set asking state to false
         finalize(() => this.isAskingSubject.next(false))
       )
       .subscribe({
         next: (data: ResponseI) => this.responsesStore.addNewResponse(data),
         error: (err: any) => {
           this.errorService.showError(
-            'An error occured while performing your search, please try again'
+            'Sorry, an error occured. A demo response is being displayed.'
           );
+          this.responsesStore.demoResponse(question);
           console.error(err);
         },
       });
